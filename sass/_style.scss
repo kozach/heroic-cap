@@ -1,0 +1,194 @@
+$marg: 55;
+$dotR: 7;
+$mainColor: #4eb7cd;
+$seccondColor: #cacaca;
+$fontFamily: 'Lato', sans-serif;
+$textColor: black;
+
+body {
+    line-height: 1.2;
+    font-size: rem-calc(24);
+    font-family: $fontFamily;
+    font-weight: 300;
+}
+html {
+    font-size: 100%;
+}
+
+:focus {
+    outline: none;
+}
+
+#subscribe {
+    $width: 200;
+    $padding: 5 0 8 0;
+    $lineHeight: 1.3;
+
+    width: rem-calc($width);
+    background-color: rgba(0, 0, 0, 0);
+    line-height: normal;
+    margin: rem-calc(52 0 0 0);
+    position: relative;
+    border: 1px solid $seccondColor;
+    padding: rem-calc($padding);
+    > * {
+        width: rem-calc($width);
+        line-height: $lineHeight;
+    }
+    .require {
+        display: none;
+    }
+    .text {
+        text-decoration: none;
+        text-align: center;
+    }
+    form {
+        display:none;
+        z-index: 100;
+        .email {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            height: 100%;
+            text-align: center;
+            line-height: $lineHeight;
+        }
+        button {
+            line-height: $lineHeight;
+            width: rem-calc($width/3.5);
+            float: right;
+            padding: rem-calc($padding);
+            margin: 0;
+            border: 0;
+            position: absolute;
+            top: rem-calc(-1);
+            right: 0;
+            background-color: transparent;
+            border: 1px solid $seccondColor;
+            border-left: 0px;
+            transition: all .5s;
+            &:hover,
+            &:active {
+                color: white;
+                background-color: $mainColor;
+                border-color: $mainColor;
+            }
+        }
+    }
+    #response {
+        display:none;
+    }
+    &.opened {
+        form {
+            display: block;
+            button {
+                right: rem-calc(-$width/3.5);
+            }
+        }
+        .text {
+            display: none;
+        }
+    }
+    // &.complete {
+    //     border-color: green;
+    // }
+    // &.error {
+    //     border-color: red;
+    // }
+}
+
+.row {
+    margin: rem-calc(0 $marg 78 $marg);
+}
+.container {
+    max-width: rem-calc(980);
+}
+
+h1 {
+    font-size: rem-calc(40);
+    font-family: $fontFamily;
+    margin: rem-calc(60 0 38 0);
+}
+
+p {
+    line-height: 1.45;
+    letter-spacing: rem-calc(0.54);
+    margin: rem-calc(10 0);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid $seccondColor;
+}
+
+#counter {
+    display: none;
+    color: $mainColor;
+    p {       
+        text-align: center;
+        b {
+            font-weight: 700;
+        }
+    }
+    &.row {
+        margin: rem-calc(0 0 78 0);
+        overflow: visible;
+    }
+    .line {
+        height: rem-calc(1);
+        background-color: $seccondColor;
+        border-radius: 0px;       
+    }
+    .dot {
+        position: absolute;
+        top: rem-calc(-(($dotR - 1)/2));
+        height: rem-calc($dotR);
+        width: rem-calc($dotR);
+        border-radius: 99px;  
+        background-color: $mainColor;
+    }
+    .text {
+        position: absolute;
+        top: rem-calc(10);
+        width: rem-calc(100);
+        text-align: center;
+        text-transform: lowercase;
+    }
+    .start {
+        .dot {
+            left: rem-calc(-(($dotR - 1)/2));
+        }
+        .text {
+            left: rem-calc(-50);
+        }
+    }
+    .end {
+        .dot {
+            right: rem-calc(-(($dotR - 1)/2));
+        }
+        .text {
+            right: rem-calc(-50);
+        }
+    }
+    .wrapper {
+        width: auto;
+        margin: rem-calc(0 $marg);
+        position: relative;
+    }
+    #progress {
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: rem-calc(-1);
+        height: rem-calc(3);
+        background-color: $mainColor;
+        box-sizing: border-box;
+        transition: width 1s ease;
+        .dot {
+            left: rem-calc(-(($dotR - 1)/2));
+            top: rem-calc(-($dotR/3));         
+        }
+    }
+}

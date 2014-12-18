@@ -1,0 +1,41 @@
+extends /_layouts/_main
+
+block vars
+	-var lang = 'en';
+	-var page = 'comingsoon';
+	-var title = 'Coming soon';
+
+block content
+	.row
+		h1 Giovio
+		p Utilizing traditional methods combined with innovations made possible by advanced technology, Grashe Fine Art Restorers has continued the tradition of past masters with a careful and conservative approach to art conservation and restoration.
+		p We have built up our reputation for a sensitive and critical approach to restoration. We have, 
+			a(href="/") facebook
+			|  and 
+			a(href="/") twitter
+			|  accounts. Big web-site comming soon:
+		#subscribe.closed
+			.text subscribe
+			form(id="webform")
+				input.email(type="email" name="email" placeholder="email address" required)
+				input.require(type="checkbox" name="require")
+				button(type="submit") ok
+	#counter.row
+		p left 
+			b
+				span#hours
+				| h
+				span#dots
+					|  : 
+				span#minutes
+				| m
+		.line
+			.wrapper
+				.start
+					.dot
+					.text
+				.end
+					.dot
+					.text
+				#progress
+					.dot
