@@ -10,6 +10,7 @@ body {
     font-size: rem-calc(24);
     font-family: $fontFamily;
     font-weight: 300;
+    color: $textColor;
 }
 html {
     font-size: 100%;
@@ -53,6 +54,7 @@ html {
             height: 100%;
             text-align: center;
             line-height: $lineHeight;
+            background-color: transparent;
         }
         button {
             line-height: $lineHeight;
